@@ -1,0 +1,156 @@
+USE [master]
+GO
+/****** Object:  Database [bd_tributario]    Script Date: 10/10/2013 22:53:58 ******/
+CREATE DATABASE [bd_tributario] ON  PRIMARY 
+( NAME = N'bd_tributario', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\bd_tributario.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'bd_tributario_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\bd_tributario_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [bd_tributario] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [bd_tributario].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [bd_tributario] SET ANSI_NULL_DEFAULT OFF
+GO
+ALTER DATABASE [bd_tributario] SET ANSI_NULLS OFF
+GO
+ALTER DATABASE [bd_tributario] SET ANSI_PADDING OFF
+GO
+ALTER DATABASE [bd_tributario] SET ANSI_WARNINGS OFF
+GO
+ALTER DATABASE [bd_tributario] SET ARITHABORT OFF
+GO
+ALTER DATABASE [bd_tributario] SET AUTO_CLOSE OFF
+GO
+ALTER DATABASE [bd_tributario] SET AUTO_CREATE_STATISTICS ON
+GO
+ALTER DATABASE [bd_tributario] SET AUTO_SHRINK OFF
+GO
+ALTER DATABASE [bd_tributario] SET AUTO_UPDATE_STATISTICS ON
+GO
+ALTER DATABASE [bd_tributario] SET CURSOR_CLOSE_ON_COMMIT OFF
+GO
+ALTER DATABASE [bd_tributario] SET CURSOR_DEFAULT  GLOBAL
+GO
+ALTER DATABASE [bd_tributario] SET CONCAT_NULL_YIELDS_NULL OFF
+GO
+ALTER DATABASE [bd_tributario] SET NUMERIC_ROUNDABORT OFF
+GO
+ALTER DATABASE [bd_tributario] SET QUOTED_IDENTIFIER OFF
+GO
+ALTER DATABASE [bd_tributario] SET RECURSIVE_TRIGGERS OFF
+GO
+ALTER DATABASE [bd_tributario] SET  DISABLE_BROKER
+GO
+ALTER DATABASE [bd_tributario] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+GO
+ALTER DATABASE [bd_tributario] SET DATE_CORRELATION_OPTIMIZATION OFF
+GO
+ALTER DATABASE [bd_tributario] SET TRUSTWORTHY OFF
+GO
+ALTER DATABASE [bd_tributario] SET ALLOW_SNAPSHOT_ISOLATION OFF
+GO
+ALTER DATABASE [bd_tributario] SET PARAMETERIZATION SIMPLE
+GO
+ALTER DATABASE [bd_tributario] SET READ_COMMITTED_SNAPSHOT OFF
+GO
+ALTER DATABASE [bd_tributario] SET HONOR_BROKER_PRIORITY OFF
+GO
+ALTER DATABASE [bd_tributario] SET  READ_WRITE
+GO
+ALTER DATABASE [bd_tributario] SET RECOVERY FULL
+GO
+ALTER DATABASE [bd_tributario] SET  MULTI_USER
+GO
+ALTER DATABASE [bd_tributario] SET PAGE_VERIFY CHECKSUM
+GO
+ALTER DATABASE [bd_tributario] SET DB_CHAINING OFF
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'bd_tributario', N'ON'
+GO
+USE [bd_tributario]
+GO
+/****** Object:  Table [dbo].[contribuyente]    Script Date: 10/10/2013 22:53:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[contribuyente](
+	[idcontribuyente] [int] NOT NULL,
+	[nomcontribuyente] [nvarchar](50) NOT NULL,
+	[ruc] [nvarchar](11) NOT NULL,
+ CONSTRAINT [PK_contribuyente] PRIMARY KEY CLUSTERED 
+(
+	[idcontribuyente] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[tipopersona]    Script Date: 10/10/2013 22:53:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[tipopersona](
+	[idtipopersona] [int] NOT NULL,
+	[nomtipopersona] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_tipopersona] PRIMARY KEY CLUSTERED 
+(
+	[idtipopersona] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[documento]    Script Date: 10/10/2013 22:53:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[documento](
+	[iddocumento] [int] NOT NULL,
+	[nomdocumento] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_documento] PRIMARY KEY CLUSTERED 
+(
+	[iddocumento] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[deuda]    Script Date: 10/10/2013 22:53:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[deuda](
+	[iddeuda] [int] NOT NULL,
+	[idcontribuyente] [int] NOT NULL,
+	[idtipopersona] [int] NOT NULL,
+	[iddocumento] [int] NOT NULL,
+	[periodotributario] [datetime] NOT NULL,
+	[codigotributario] [int] NOT NULL,
+	[resolucion] [nvarchar](50) NULL,
+	[importepagar] [money] NOT NULL,
+ CONSTRAINT [PK_deuda] PRIMARY KEY CLUSTERED 
+(
+	[iddeuda] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  ForeignKey [FK_deuda1]    Script Date: 10/10/2013 22:53:59 ******/
+ALTER TABLE [dbo].[deuda]  WITH CHECK ADD  CONSTRAINT [FK_deuda1] FOREIGN KEY([idcontribuyente])
+REFERENCES [dbo].[contribuyente] ([idcontribuyente])
+GO
+ALTER TABLE [dbo].[deuda] CHECK CONSTRAINT [FK_deuda1]
+GO
+/****** Object:  ForeignKey [FK_deuda2]    Script Date: 10/10/2013 22:53:59 ******/
+ALTER TABLE [dbo].[deuda]  WITH CHECK ADD  CONSTRAINT [FK_deuda2] FOREIGN KEY([idtipopersona])
+REFERENCES [dbo].[tipopersona] ([idtipopersona])
+GO
+ALTER TABLE [dbo].[deuda] CHECK CONSTRAINT [FK_deuda2]
+GO
+/****** Object:  ForeignKey [FK_deuda3]    Script Date: 10/10/2013 22:53:59 ******/
+ALTER TABLE [dbo].[deuda]  WITH CHECK ADD  CONSTRAINT [FK_deuda3] FOREIGN KEY([iddocumento])
+REFERENCES [dbo].[documento] ([iddocumento])
+GO
+ALTER TABLE [dbo].[deuda] CHECK CONSTRAINT [FK_deuda3]
+GO
