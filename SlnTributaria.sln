@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trib.Datos.Entidad", "Trib.Datos.Entidad\Trib.Datos.Entidad.csproj", "{250097E6-3F51-48E0-861F-53E50DDC4DB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trib.Datos.Modelo", "Trib.Datos.Modelo\Trib.Datos.Modelo.csproj", "{01A82C69-9A26-4220-A55E-FFE23691913B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datos", "Datos", "{D8B28DA0-44C3-4767-A6BC-08D9DEF71698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trib.Aplicacion", "Trib.Aplicacion\Trib.Aplicacion.csproj", "{92A47E61-290C-4C4D-AF01-A850D6DBEACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trib.Servicios", "Trib.Servicios\Trib.Servicios.csproj", "{484F2D96-6DEA-4E4B-9050-C9528C10F87F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 - Aplicacion", "20 - Aplicacion", "{E97E9A53-3F29-467C-9D98-B94D5088AF9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 - Infraestructura", "30 - Infraestructura", "{824F59DB-8CB9-459D-AE04-59CC5E023768}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 - Servicios Distribuidos", "10 - Servicios Distribuidos", "{970C40D7-AB9E-430D-9D00-54BB287CBF4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 - Presentacion", "00 - Presentacion", "{118D7868-0BB1-48B1-9247-8E80F17FC11A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web", "{06C8FDBA-470F-42F0-AB4E-C40A663EB52F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Web"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Web"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1366"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trib.Services.Host", "Trib.Services.Host\Trib.Services.Host.csproj", "{1C6467FD-3581-4B49-99A9-9D3B0332EAEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 - TDD", "40 - TDD", "{EAE95C84-CFB0-4ABB-9F0E-C905637AB73E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTributaria", "TestTributaria\TestTributaria.csproj", "{5F593731-87D1-4998-959A-0C0B6295C692}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50FE0535-46E0-4EA5-ADB8-59E384DAEC44}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		SlnTributaria.vsmdi = SlnTributaria.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = SlnTributaria.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{250097E6-3F51-48E0-861F-53E50DDC4DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250097E6-3F51-48E0-861F-53E50DDC4DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250097E6-3F51-48E0-861F-53E50DDC4DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250097E6-3F51-48E0-861F-53E50DDC4DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A82C69-9A26-4220-A55E-FFE23691913B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A82C69-9A26-4220-A55E-FFE23691913B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A82C69-9A26-4220-A55E-FFE23691913B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A82C69-9A26-4220-A55E-FFE23691913B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A47E61-290C-4C4D-AF01-A850D6DBEACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A47E61-290C-4C4D-AF01-A850D6DBEACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A47E61-290C-4C4D-AF01-A850D6DBEACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A47E61-290C-4C4D-AF01-A850D6DBEACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484F2D96-6DEA-4E4B-9050-C9528C10F87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484F2D96-6DEA-4E4B-9050-C9528C10F87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484F2D96-6DEA-4E4B-9050-C9528C10F87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484F2D96-6DEA-4E4B-9050-C9528C10F87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C8FDBA-470F-42F0-AB4E-C40A663EB52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C8FDBA-470F-42F0-AB4E-C40A663EB52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C8FDBA-470F-42F0-AB4E-C40A663EB52F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C8FDBA-470F-42F0-AB4E-C40A663EB52F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{1C6467FD-3581-4B49-99A9-9D3B0332EAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6467FD-3581-4B49-99A9-9D3B0332EAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6467FD-3581-4B49-99A9-9D3B0332EAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6467FD-3581-4B49-99A9-9D3B0332EAEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F593731-87D1-4998-959A-0C0B6295C692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F593731-87D1-4998-959A-0C0B6295C692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F593731-87D1-4998-959A-0C0B6295C692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F593731-87D1-4998-959A-0C0B6295C692}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D8B28DA0-44C3-4767-A6BC-08D9DEF71698} = {824F59DB-8CB9-459D-AE04-59CC5E023768}
+		{01A82C69-9A26-4220-A55E-FFE23691913B} = {D8B28DA0-44C3-4767-A6BC-08D9DEF71698}
+		{250097E6-3F51-48E0-861F-53E50DDC4DB6} = {D8B28DA0-44C3-4767-A6BC-08D9DEF71698}
+		{92A47E61-290C-4C4D-AF01-A850D6DBEACA} = {E97E9A53-3F29-467C-9D98-B94D5088AF9B}
+		{484F2D96-6DEA-4E4B-9050-C9528C10F87F} = {970C40D7-AB9E-430D-9D00-54BB287CBF4B}
+		{1C6467FD-3581-4B49-99A9-9D3B0332EAEC} = {970C40D7-AB9E-430D-9D00-54BB287CBF4B}
+		{06C8FDBA-470F-42F0-AB4E-C40A663EB52F} = {118D7868-0BB1-48B1-9247-8E80F17FC11A}
+		{5F593731-87D1-4998-959A-0C0B6295C692} = {EAE95C84-CFB0-4ABB-9F0E-C905637AB73E}
+		{50FE0535-46E0-4EA5-ADB8-59E384DAEC44} = {EAE95C84-CFB0-4ABB-9F0E-C905637AB73E}
+	EndGlobalSection
+EndGlobal
